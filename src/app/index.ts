@@ -1,5 +1,5 @@
 import * as express from 'express';
-import * as guess from './guess';
+import * as guess from './guess/router';
 import * as morgan from 'morgan';
 
 export const app: express.Express = express();
