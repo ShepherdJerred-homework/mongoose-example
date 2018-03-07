@@ -23,7 +23,7 @@ export async function getGuesses (): Promise<Guess[]> {
 }
 
 export async function getGuessesInRange (min: number, max: number): Promise<Guess[]> {
-  return GuessModel.find();
+  return GuessModel.find().where('count').gt(min - 1).lt(max + 1);
 }
 
 export async function addGuess (guess: GuessDocument): Promise<GuessDocument> {
