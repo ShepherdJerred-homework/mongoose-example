@@ -27,7 +27,7 @@ export let mongoConfig: MongoConfig;
 if (process.env.MONGODB_URI) {
   let matches = process.env.MONGODB_URI.match('\\/\\/([a-zA-Z0-9_]+):([a-zA-Z0-9_]+)@([a-zA-Z0-9_\\.]+):([0-9]+)\\/([a-zA-Z0-9_]+)');
   if (matches) {
-    mongoConfig = new MongoConfig(matches[2], parseInt(matches[3], 10), matches[0], matches[1], matches[4]);
+    mongoConfig = new MongoConfig(matches[3], parseInt(matches[4], 10), matches[1], matches[2], matches[5]);
     console.log(matches);
     console.log(mongoConfig);
   }
