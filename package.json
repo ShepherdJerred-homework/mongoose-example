@@ -1,7 +1,7 @@
 {
-  "name": "mongoose-example",
+  "name": "mongoose-guesser",
   "version": "1.0.0",
-  "description": "Example using Mongoose",
+  "description": "Guessing game with Mongoose",
   "main": "lib/app/index.js",
   "scripts": {
     "build": "tsc -p tsconfig.json",
@@ -9,7 +9,8 @@
     "lint": "tslint -t stylish --project \"tsconfig.json\"",
     "test": "mocha",
     "start": "node lib/app/server",
-    "dev": "nodemon lib/app/server"
+    "dev": "nodemon lib/app/server",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",

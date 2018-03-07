@@ -1,1 +1,1 @@
-# mongoose-example
+# mongoose-guesser
