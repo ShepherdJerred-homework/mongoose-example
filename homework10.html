@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../standard.css" type="text/css">
+    <title>Comp 431: Homework</title>
+    <base target="_top"/>
+  </head>
+  <body>
+    <p>
+      The Harding Computer Science department fundraiser is a contest in which
+      people guess how many jelly beans are in a jar.  Each person may play
+      multiple times, and therefore make multiple guesses.  You are to create
+      a web service which will store these guesses in a MongoDB database and
+      retrieve them upon request.
+    </p>
+    <ol class="spaced">
+      <li>
+        Your config module should export a <code>db</code> variable which is
+        an object containing the following properties.
+        <ul>
+          <li><code>host</code> &mdash; the computer the database server is
+          on</li>
+          <li><code>user</code> &mdash; the username to connect with</li>
+          <li><code>pass</code> &mdash; the password to connect with</li>
+          <li><code>name</code> &mdash; the name of the database to use</li>
+        </ul>
+        I should be able to use your application with my database simply by
+        changing the value of these properties.
+      </li>
+      <li>
+        Create a Mongoose model type to represent guesses.  Each guess should
+        have a <code>user</code> (string) and a <code>count</code> (number).
+      </li>
+      <li>
+        To create a new record you should make a POST request
+        to <code>/api/jellybeans/</code>.  The content of the request should
+        specify the user and the guess.
+<pre class="example">
+{ "user" : "gfoust",
+  "count" : 230
+}
+</pre>
+      </li>
+      <li>
+        A GET request to <code>/api/jellybeans/</code> should retrieve all
+        guesses as a JSON array.
+<pre class="example">
+[ { "user" : "gfoust",
+    "count" : 230
+  },
+  { "user" : "jsmith",
+    "count" : 258
+  },
+  { "user" : "mjones",
+    "count" : 300
+  },
+  { "user" : "gfoust",
+    "count" : 270
+  }
+]
+</pre>
+      </li>
+      <li>
+        A GET request
+        to <code>/api/jellybeans/<var>from</var>-<var>to</var></code> should
+        retrieve all guesses where count is between <var>from</var>
+        and <var>to</var> as a JSON array.
+<pre class="exampletitle">/api/jellybeans/255-275</pre>
+<pre class="example">
+[ { "user" : "jsmith",
+    "count" : 258
+  },
+  { "user" : "gfoust",
+    "count" : 270
+  }
+]
+</pre>
+      </li>
+      <li>
+        The url <code>/api/</code> should show <a href="apicall.html">my
+        web-service page</a> to test your web services.
+      </li>
+    </ol>
+  </body>
+</html>
