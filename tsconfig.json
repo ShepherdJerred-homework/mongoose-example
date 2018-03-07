@@ -22,15 +22,7 @@
     "lib": [
       "es6"
     ],
-    "types": [
-      "node"
-    ],
     "baseUrl": ".",
-    "paths": {
-      "typescript-starter": [
-        "src/index.ts"
-      ]
-    }
   },
   "include": [
     "src/**/*.ts"
